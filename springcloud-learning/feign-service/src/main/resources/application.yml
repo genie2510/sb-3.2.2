@@ -1,0 +1,15 @@
+server:
+  port: 8701
+spring:
+  application:
+    name: feign-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #配置Nacos地址
+    openfeign:
+      circuitbreaker:
+        enabled: true #开启Circuit Breaker的服务降级功能
+logging:
+  level:
+    com.macro.cloud.service.UserService: debug

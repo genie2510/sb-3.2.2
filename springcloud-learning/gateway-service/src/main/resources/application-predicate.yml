@@ -1,0 +1,10 @@
+server:
+  port: 9201
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: remoteaddr_route
+          uri: ${service-url.user-service}
+          predicates:
+            - RemoteAddr=192.168.3.1/24
